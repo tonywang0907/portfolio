@@ -80,7 +80,7 @@ export default function Contact() {
         }
       `}</style>
 
-      <section id="contact" style={{ padding: '100px 32px', background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
+      <section id="contact" style={{ padding: '100px 32px', background: 'var(--bg)', position: 'relative', overflow: 'hidden', borderTop: '1px solid var(--border)' }}>
         {/* Ambient orbs */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
           <div style={{

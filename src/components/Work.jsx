@@ -203,11 +203,13 @@ export default function Work() {
         }
       `}</style>
 
-      <section id="work" ref={sectionRef} style={{ padding: '100px 32px', background: 'var(--bg)' }}>
+      <section id="work" ref={sectionRef} style={{ padding: '80px 32px', background: 'var(--bg)', borderTop: '1px solid var(--border)' }}>
         <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto' }}>
 
-          <h2 style={titleStyle}>Selected Work</h2>
-
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
+            <p style={{ ...labelStyle, marginBottom: 0 }}>Selected Work</p>
+            <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, var(--border), transparent)' }} />
+          </div>
           <div className="work-grid">
 
             {/* ── Inven AI ── */}
@@ -267,13 +269,20 @@ export default function Work() {
                     }}>{s}</span>
                   ))}
                 </div>
-                <a href="https://www.inven-ai.com/" target="_blank" rel="noreferrer"
-                  style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', transition: 'color 0.2s', flexShrink: 0, marginLeft: 16 }}
-                  onMouseEnter={e => e.currentTarget.style.color = '#fff'}
-                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.45)'}
-                >
-                  Visit Site →
-                </a>
+                <div style={{ display: 'flex', gap: 16, flexShrink: 0, marginLeft: 16 }}>
+                  {[
+                    { label: 'Visit Site →', href: 'https://www.inven-ai.com/' },
+                    { label: 'Download App →', href: 'https://apps.apple.com/us/app/inven-ai/id6758968407' },
+                  ].map(({ label, href }) => (
+                    <a key={label} href={href} target="_blank" rel="noreferrer"
+                      style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', transition: 'color 0.2s', whiteSpace: 'nowrap' }}
+                      onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.45)'}
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -546,9 +555,4 @@ const navBtnStyle = {
 const labelStyle = {
   fontSize: 11, fontWeight: 500, letterSpacing: '0.14em',
   textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: 12,
-}
-const titleStyle = {
-  fontFamily: 'var(--font-display)',
-  fontSize: 'clamp(38px, 5vw, 60px)', fontWeight: 400,
-  letterSpacing: '-0.025em', color: 'var(--text)', marginBottom: 36,
 }
