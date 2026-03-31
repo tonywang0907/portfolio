@@ -143,17 +143,17 @@ export default function Work() {
         /* ── Side rows ── */
         .side-row {
           display: grid;
-          grid-template-columns: 260px 1fr auto auto;
+          grid-template-columns: 280px 1fr auto auto;
           align-items: center;
           gap: 0 28px;
-          padding: 16px 12px;
+          padding: 18px 14px;
           border-bottom: 1px solid var(--border);
           border-radius: 8px;
           text-decoration: none;
           opacity: 0;
           transition: background 0.18s;
         }
-        .side-row:first-child { border-top: 1px solid var(--border); }
+        .side-row:first-child { border-top: none; }
         .side-row:hover { background: var(--bg-2); }
         .side-row:hover .side-arrow { transform: translateX(3px); }
         .side-arrow {
@@ -203,11 +203,10 @@ export default function Work() {
         }
       `}</style>
 
-      <section id="work" ref={sectionRef} style={{ padding: '72px 32px', background: 'var(--bg)' }}>
+      <section id="work" ref={sectionRef} style={{ padding: '100px 32px', background: 'var(--bg)' }}>
         <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto' }}>
 
-          <p style={labelStyle}>Selected Work</p>
-          <h2 style={titleStyle}>Things I've Built</h2>
+          <h2 style={titleStyle}>Selected Work</h2>
 
           <div className="work-grid">
 
@@ -327,10 +326,13 @@ export default function Work() {
           </div>
 
           {/* ── Side projects ── */}
-          <div ref={sideRef} style={{ marginTop: 52, paddingTop: 36, borderTop: '1px solid var(--border)' }}>
-            <p style={{ ...labelStyle, marginBottom: 20 }}>Also Built</p>
+          <div ref={sideRef} style={{ marginTop: 88 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 28 }}>
+              <p style={{ ...labelStyle, marginBottom: 0 }}>Also Built</p>
+              <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, var(--border), transparent)' }} />
+            </div>
             <div>
-              {sideProjects.map((p) => (
+              {sideProjects.map((p, i) => (
                 <a
                   key={p.name}
                   href={p.github}
@@ -338,7 +340,10 @@ export default function Work() {
                   rel="noreferrer"
                   className="side-row"
                 >
-                  <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--text)', letterSpacing: '-0.01em' }}>
+                  <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--text)', letterSpacing: '-0.01em', display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <span style={{ fontSize: 10, color: 'var(--text-dim)', fontVariantNumeric: 'tabular-nums', letterSpacing: '0.06em', flexShrink: 0 }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                     {p.name}
                   </span>
                   <span className="side-row-desc" style={{ fontSize: 13, color: 'var(--text-dim)', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -347,7 +352,7 @@ export default function Work() {
                   <div className="side-row-stack" style={{ display: 'flex', gap: 5, flexShrink: 0 }}>
                     {p.stack.map(s => <span key={s} className="chip">{s}</span>)}
                   </div>
-                  <span className="side-arrow">GitHub ↗</span>
+                  <span className="side-arrow" style={{ fontSize: 11, letterSpacing: '0.04em', textTransform: 'uppercase' }}>GitHub ↗</span>
                 </a>
               ))}
             </div>
@@ -544,6 +549,6 @@ const labelStyle = {
 }
 const titleStyle = {
   fontFamily: 'var(--font-display)',
-  fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 400,
-  letterSpacing: '-0.02em', color: 'var(--text)', marginBottom: 28,
+  fontSize: 'clamp(38px, 5vw, 60px)', fontWeight: 400,
+  letterSpacing: '-0.025em', color: 'var(--text)', marginBottom: 36,
 }

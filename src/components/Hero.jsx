@@ -74,7 +74,7 @@ export default function Hero() {
         ref={ref}
         style={{
           paddingTop: 'calc(var(--nav-h) + 88px)',
-          paddingBottom: 100,
+          paddingBottom: 130,
           paddingLeft: 32,
           paddingRight: 32,
           position: 'relative',

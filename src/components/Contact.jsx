@@ -80,7 +80,7 @@ export default function Contact() {
         }
       `}</style>
 
-      <section id="contact" style={{ padding: '72px 32px', background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
+      <section id="contact" style={{ padding: '100px 32px', background: 'var(--bg)', position: 'relative', overflow: 'hidden' }}>
         {/* Ambient orbs */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
           <div style={{
@@ -141,6 +141,6 @@ const labelStyle = {
 }
 const titleStyle = {
   fontFamily: 'var(--font-display)',
-  fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 400,
-  letterSpacing: '-0.02em', color: 'var(--text)',
+  fontSize: 'clamp(38px, 5vw, 60px)', fontWeight: 400,
+  letterSpacing: '-0.025em', color: 'var(--text)',
 }
