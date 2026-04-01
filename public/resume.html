@@ -2,83 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tony Wang — Resume</title>
+  <title>Tony Wang</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 10.2pt;
+      font-size: 10pt;
       color: #000;
       background: #fff;
-      padding: 0.5in 0.65in;
+      padding: 0.45in 0.65in;
       max-width: 8.5in;
       margin: 0 auto;
-      line-height: 1.28;
+      line-height: 1.25;
     }
 
-    .header { text-align: center; margin-bottom: 5pt; }
-    .header h1 { font-size: 13.5pt; font-weight: bold; margin-bottom: 2pt; }
-    .header p { font-size: 9.8pt; }
+    /* Header */
+    .name {
+      text-align: center;
+      font-size: 20pt;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      margin-bottom: 4pt;
+    }
+    .contact {
+      text-align: center;
+      font-size: 9.5pt;
+      color: #222;
+    }
 
+    /* Section */
     .section { margin-top: 5pt; }
     .section-title {
-      font-size: 10.2pt;
+      font-size: 10.5pt;
       font-weight: bold;
       text-transform: uppercase;
+      letter-spacing: 0.06em;
       border-bottom: 1px solid #000;
       padding-bottom: 1pt;
-      margin-bottom: 4pt;
-      letter-spacing: 0.04em;
+      margin-bottom: 5pt;
     }
 
     .entry { margin-bottom: 4pt; }
+
     .row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
     }
+
     .org { font-weight: bold; }
     .role { font-style: italic; }
-    .dates { font-style: italic; white-space: nowrap; }
+    .date { font-style: italic; white-space: nowrap; font-size: 10pt; }
 
-    ul { margin: 2pt 0 0 16pt; }
+    ul { margin: 2pt 0 0 15pt; }
     li { margin-bottom: 1pt; }
 
-    .skills-row { margin-bottom: 2pt; }
+    .skills-row { margin-bottom: 2.5pt; }
 
     @media print {
-      body { padding: 0.45in 0.6in; }
+      body { padding: 0.45in 0.65in; }
       @page { size: letter; margin: 0; }
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>Tony Wang</h1>
-    <p>US Citizen &nbsp;|&nbsp; tony0907wang@gmail.com &nbsp;|&nbsp; (341) 600-9980 &nbsp;|&nbsp; LinkedIn: tonywang0907 &nbsp;|&nbsp; GitHub: tonywang0907</p>
+  <div class="name">Tony Wang</div>
+  <div class="contact">
+    tony0907wang@gmail.com &nbsp;|&nbsp; (341) 600-9980 &nbsp;|&nbsp; tonywang.name &nbsp;|&nbsp; linkedin.com/in/tonywang0907 &nbsp;|&nbsp; github.com/tonywang0907
   </div>
 
   <!-- EDUCATION -->
   <div class="section">
     <div class="section-title">Education</div>
+
     <div class="entry">
       <div class="row">
         <span class="org">University of Illinois at Urbana-Champaign</span>
-        <span>Champaign, Illinois</span>
+        <span class="date">May 2024 – Aug 2025</span>
       </div>
       <div class="row">
-        <span class="role">M.S. in Computer Science &nbsp;— GPA: 3.7/4.0</span>
-        <span class="dates">May 2024 – Aug 2025</span>
+        <span class="role">M.S. in Computer Science - GPA: 3.7/4.0</span>
       </div>
       <ul>
-        <li><b>Coursework:</b> DSA, OOP, Distributed Systems, Applied ML, Deep Learning for Healthcare, Computer Security, Software Engineering, Advanced Bayesian Modeling, Prompt Engineering</li>
+        <li><b>Coursework:</b> Data Structures and Algorithms, Distributed Systems, Applied Machine Learning, Computer Security, Software Engineering, Deep Learning for Healthcare, Prompt Engineering</li>
       </ul>
-      <div class="row" style="margin-top:2pt;">
-        <span class="role">B.S. Food Science, Minor Computer Science &nbsp;— GPA: 3.7/4.0</span>
-        <span class="dates">Aug 2020 – May 2024</span>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">University of Illinois at Urbana-Champaign</span>
+        <span class="date">Aug 2020 – May 2024</span>
       </div>
+      <div class="row">
+        <span class="role">B.S. Food Science, Minor in Computer Science - GPA: 3.7/4.0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">Inven AI - Smart Pantry &amp; Recipe Tracker</span>
+        <span class="date">Dec 2025 – Present</span>
+      </div>
+      <div class="row">
+        <span class="role">Founder</span>
+      </div>
+      <ul>
+        <li>Prompt-engineered Gemini to handle grocery receipt parsing and personalized recipe generation, structuring prompts to produce consistent structured output from unstructured image data</li>
+        <li>Designed a Supabase PostgreSQL schema covering user authentication and all user data; wrote edge functions and database functions for server-side logic and complex queries</li>
+        <li>Built an offline-first sync system using Hive for local caching, ensuring full app functionality without connectivity and syncing back to Supabase on reconnect</li>
+        <li>Used Claude Code with MCP for database workflows and Google Stitch for UI iteration; managed full product lifecycle from schema design to App Store deployment</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">Optimizing BM25 and RAG for Search Engine</span>
+        <span class="date">Aug 2024 – Dec 2024</span>
+      </div>
+      <div class="row">
+        <span class="role">CS 410 Text Information Systems, UIUC</span>
+      </div>
+      <ul>
+        <li>Tuned BM25 hyperparameters (k, b) on the Cranfield and APNews datasets, achieving a ~7% improvement in nDCG@10 and benchmarked against QLD and Rocchio retrieval algorithms</li>
+        <li>Built a RAG pipeline with GPT and applied Chain-of-Thought and Self-Consistency prompting strategies to improve response accuracy and reduce hallucinations</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="org">Sports Card Auction Tool for Whatnot Streams</span>
+        <span class="date">Jun 2023 – Jul 2023</span>
+      </div>
+      <div class="row">
+        <span class="role">Project Lead</span>
+      </div>
+      <ul>
+        <li>Built a Flask web app that scrapes live buyer lists from Whatnot livestreams and auto-assigns teams to buyers during live sports card auctions, saving ~5 seconds per round at 100% accuracy</li>
+        <li>Whatnot later launched a similar native feature for creator monetization, validating the problem space</li>
+      </ul>
     </div>
   </div>
 
@@ -89,93 +157,44 @@
     <div class="entry">
       <div class="row">
         <span class="org">University of Illinois at Urbana-Champaign</span>
-        <span>Champaign, Illinois</span>
+        <span class="date">Aug 2023 – Dec 2023</span>
       </div>
       <div class="row">
-        <span class="role">Course Assistant — Intro to Computer Science</span>
-        <span class="dates">Aug 2023 – Dec 2023</span>
+        <span class="role">Course Assistant, Intro to Computer Science</span>
       </div>
       <ul>
-        <li>Supported ~100 students with 1-on-1 debugging, quiz prep, and project comprehension across live help sessions</li>
-        <li>Authored JUnit test cases, reviewed student codebases, and co-designed new problem sets for course staff</li>
+        <li>Held office hours for 100+ students, helping them debug code and strengthen their understanding of CS concepts</li>
+        <li>Wrote JUnit test suites and contributed to developing problem sets for the course curriculum</li>
       </ul>
     </div>
 
     <div class="entry">
       <div class="row">
         <span class="org">Mattson Technology</span>
-        <span>Fremont, California</span>
+        <span class="date">May 2022 – Aug 2022</span>
       </div>
       <div class="row">
         <span class="role">Process Engineer Intern</span>
-        <span class="dates">May 2022 – Aug 2022</span>
+        <span>Fremont, California</span>
       </div>
       <ul>
-        <li>Analyzed cross-sectional SEM results to tune etch and strip recipe parameters, improving process accuracy and repeatability</li>
-        <li>Identified and validated optimal recipes that enhanced stability and efficiency across both semiconductor processes</li>
+        <li>Analyzed SEM measurement data to tune etch and strip process parameters, improving repeatability across test wafers</li>
+        <li>Documented results and identified optimal process configurations, reducing variance in semiconductor fabrication outcomes</li>
       </ul>
     </div>
 
     <div class="entry">
       <div class="row">
         <span class="org">Mattson Technology</span>
-        <span>Fremont, California</span>
+        <span class="date">Jun 2021 – Aug 2021</span>
       </div>
       <div class="row">
         <span class="role">Data Engineering Intern</span>
-        <span class="dates">Jun 2021 – Aug 2021</span>
+        <span>Fremont, California</span>
       </div>
       <ul>
-        <li>Built a dynamic Excel pricing tool using INDEX/MATCH and BOM logic, automating quote generation from SAP data</li>
-        <li>Reduced turnaround time for complex machine quotes, enabling the Sales team to deliver faster and more consistent pricing</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="section">
-    <div class="section-title">Projects</div>
-
-    <div class="entry">
-      <div class="row">
-        <span class="org">Inven AI — AI-Powered Kitchen Inventory App</span>
-      </div>
-      <div class="row">
-        <span class="role">Founder / Independent Project</span>
-        <span class="dates">Dec 2025 – Present</span>
-      </div>
-      <ul>
-        <li>Designed and built a cross-platform iOS app in Flutter that uses AI to turn grocery receipts into a live kitchen inventory</li>
-        <li>Implemented AI-powered receipt scanning, expiration tracking with urgency alerts, and recipe generation from current stock</li>
-        <li>Shipped using an AI-assisted development workflow with Claude Code, Gemini, and Stitch; submitted to the Apple App Store</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="row">
-        <span class="org">Optimizing BM25 and RAG for Search Engine</span>
-      </div>
-      <div class="row">
-        <span class="role">Independent Project</span>
-        <span class="dates">Aug 2024 – Dec 2024</span>
-      </div>
-      <ul>
-        <li>Tuned BM25 hyperparameters and integrated RAG with an LLM, achieving a 10% gain in nDCG@10 and Precision@10</li>
-        <li>Applied Chain-of-Thought, Self-Consistency, and RAF prompting strategies to improve response accuracy and clarity</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="row">
-        <span class="org">Sports Card Auction Tool for Whatnot Streams</span>
-      </div>
-      <div class="row">
-        <span class="role">Project Lead</span>
-        <span class="dates">Jun 2023 – Jul 2023</span>
-      </div>
-      <ul>
-        <li>Built a real-time Flask and Selenium tool that automated buyer-team pairing during live sports card auctions on Whatnot</li>
-        <li>Eliminated manual entry, saving ~5 seconds per round at 100% accuracy; tool was later adopted by Whatnot to support creator monetization</li>
+        <li>Built a pricing tool that pulled SAP data exports and applied bill-of-materials logic to automate machine quote generation</li>
+        <li>Eliminated manual quote calculation, reducing turnaround time and giving the sales team consistent, accurate pricing</li>
       </ul>
     </div>
   </div>
@@ -183,9 +202,9 @@
   <!-- SKILLS -->
   <div class="section">
     <div class="section-title">Skills</div>
-    <div class="skills-row"><b>Languages & Frameworks:</b> Python, JavaScript, Java, C++, SQL, React, Node.js, Flutter, Dart, Flask, Django, Bootstrap, TensorFlow, PyTorch</div>
-    <div class="skills-row"><b>Tools & Technologies:</b> Git, Docker, AWS, CI/CD, REST API, Selenium, SQLite, Claude Code, Gemini, Stitch</div>
-    <div class="skills-row"><b>Concepts:</b> Agile, TDD, Data Modeling, Schema Design, DSA, Prompt Engineering, AI-Assisted Development, RAG, LLM Integration</div>
+    <div class="skills-row"><b>Languages and Frameworks:</b> Python, JavaScript, Java, C++, SQL, React, Node.js, Flutter, Dart, Flask, Django</div>
+    <div class="skills-row"><b>Tools and Technologies:</b> Git, Docker, AWS, CI/CD, REST API, Selenium, PostgreSQL, Supabase, Hive, Claude Code, MCP, Gemini, Google Stitch</div>
+    <div class="skills-row"><b>Concepts:</b> Data Modeling, Schema Design, Prompt Engineering, RAG, LLM Integration, AI-Assisted Development, Agile, TDD</div>
   </div>
 
 </body>
